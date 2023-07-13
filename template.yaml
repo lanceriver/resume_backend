@@ -1,0 +1,123 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Description: >
+  resume_backend
+
+  Sample SAM Template for resume_backend
+
+# More info about Globals: https://github.com/awslabs/serverless-application-model/blob/master/docs/globals.rst
+Globals:
+  Function:
+    Timeout: 3
+    MemorySize: 128
+  HttpApi:
+    CorsConfiguration:
+      AllowOrigins:
+        - "*"
+      AllowMethods:
+        - "*"
+      AllowHeaders:
+        - "*"
+
+Resources:
+  StoreUUIDFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: lambdas/storeUUID/
+      Handler: app.lambda_handler
+      Runtime: python3.9
+      Role: arn:aws:iam::319611139788:role/LambdaDynamoAPI
+      Architectures:
+      - x86_64
+      Events:
+        StoreUUID:
+          Type: HttpApi
+          Properties:
+            Path: /storeUUID
+            Method: put
+
+  GetUUIDFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: lambdas/checkUUID/
+      Handler: app.lambda_handler
+      Runtime: python3.9
+      Role: arn:aws:iam::319611139788:role/LambdaDynamoAPI
+      Architectures:
+      - x86_64
+      Events:
+        GetUUID:
+          Type: HttpApi
+          Properties:
+            Path: /getUUID
+            Method: put
+
+
+  GetVisitorCount:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: lambdas/get_visitor_count/
+      Handler: app.lambda_handler
+      Runtime: python3.9
+      Role: arn:aws:iam::319611139788:role/LambdaDynamoAPI
+      Architectures:
+      - x86_64
+      Events:
+        GetVisitorCount:
+          Type: HttpApi
+          Properties:
+            Path: /get_visitor_count
+            Method: get
+
+  UpdateVisitorCount:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: lambdas/update_visitor_count/
+      Handler: app.lambda_handler
+      Runtime: python3.9
+      Role: arn:aws:iam::319611139788:role/LambdaDynamoAPI
+      Architectures:
+      - x86_64
+      Events:
+        UpdateVisitorCount:
+          Type: HttpApi
+          Properties:
+            Path: /update_visitor_count
+            Method: put
+
+  GetRequestGenerator:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: lambdas/get_request/
+      Handler: app.lambda_handler
+      Runtime: python3.9
+      Role: arn:aws:iam::319611139788:role/LambdaDynamoAPI
+      Architectures:
+      - x86_64
+      Events:
+        GetRequestGenerator:
+          Type: HttpApi
+          Properties:
+            Path: /get_request_generator
+            Method: get
+
+  ApplicationResourceGroup:
+    Type: AWS::ResourceGroups::Group
+    Properties:
+      Name:
+        Fn::Sub: ApplicationInsights-SAM-${AWS::StackName}
+      ResourceQuery:
+        Type: CLOUDFORMATION_STACK_1_0
+  ApplicationInsightsMonitoring:
+    Type: AWS::ApplicationInsights::Application
+    Properties:
+      ResourceGroupName:
+        Ref: ApplicationResourceGroup
+      AutoConfigurationEnabled: 'true'
+Outputs:
+  # ServerlessRestApi is an implicit API created out of Events key under Serverless::Function
+  # Find out more about other implicit resources you can reference within SAM
+  # https://github.com/awslabs/serverless-application-model/blob/master/docs/internals/generated_resources.rst#api
+  HelloWorldApi:
+    Description: API Gateway endpoint URL for Prod stage for Hello World function
+    Value: !Sub "https://njp507r5m5.execute-api.us-east-1.amazonaws.com/default"

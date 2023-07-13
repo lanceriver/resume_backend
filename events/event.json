@@ -1,0 +1,123 @@
+{
+    "version": "1.0",
+    "resource": "/storeUUID",
+    "path": "/default/storeUUID",
+    "httpMethod": "PUT",
+    "headers": {
+      "Content-Length": "47",
+      "Content-Type": "application/json",
+      "Host": "njp507r5m5.execute-api.us-east-1.amazonaws.com",
+      "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36",
+      "X-Amzn-Trace-Id": "Root=1-64aea432-7bb9e8c71f567094560e82ef",
+      "X-Forwarded-For": "116.87.87.214",
+      "X-Forwarded-Port": "443",
+      "X-Forwarded-Proto": "https",
+      "accept": "*/*",
+      "accept-encoding": "gzip, deflate, br",
+      "accept-language": "en-US,en;q=0.9",
+      "origin": "http://127.0.0.1:5500",
+      "referer": "http://127.0.0.1:5500/",
+      "sec-ch-ua": "\"Not.A/Brand\";v=\"8\", \"Chromium\";v=\"114\", \"Google Chrome\";v=\"114\"",
+      "sec-ch-ua-mobile": "?0",
+      "sec-ch-ua-platform": "\"macOS\"",
+      "sec-fetch-dest": "empty",
+      "sec-fetch-mode": "cors",
+      "sec-fetch-site": "cross-site"
+    },
+    "multiValueHeaders": {
+      "Content-Length": [
+        "47"
+      ],
+      "Content-Type": [
+        "application/json"
+      ],
+      "Host": [
+        "njp507r5m5.execute-api.us-east-1.amazonaws.com"
+      ],
+      "User-Agent": [
+        "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36"
+      ],
+      "X-Amzn-Trace-Id": [
+        "Root=1-64aea432-7bb9e8c71f567094560e82ef"
+      ],
+      "X-Forwarded-For": [
+        "116.87.87.214"
+      ],
+      "X-Forwarded-Port": [
+        "443"
+      ],
+      "X-Forwarded-Proto": [
+        "https"
+      ],
+      "accept": [
+        "*/*"
+      ],
+      "accept-encoding": [
+        "gzip, deflate, br"
+      ],
+      "accept-language": [
+        "en-US,en;q=0.9"
+      ],
+      "origin": [
+        "http://127.0.0.1:5500"
+      ],
+      "referer": [
+        "http://127.0.0.1:5500/"
+      ],
+      "sec-ch-ua": [
+        "\"Not.A/Brand\";v=\"8\", \"Chromium\";v=\"114\", \"Google Chrome\";v=\"114\""
+      ],
+      "sec-ch-ua-mobile": [
+        "?0"
+      ],
+      "sec-ch-ua-platform": [
+        "\"macOS\""
+      ],
+      "sec-fetch-dest": [
+        "empty"
+      ],
+      "sec-fetch-mode": [
+        "cors"
+      ],
+      "sec-fetch-site": [
+        "cross-site"
+      ]
+    },
+    "queryStringParameters": null,
+    "multiValueQueryStringParameters": null,
+    "requestContext": {
+      "accountId": "319611139788",
+      "apiId": "njp507r5m5",
+      "domainName": "njp507r5m5.execute-api.us-east-1.amazonaws.com",
+      "domainPrefix": "njp507r5m5",
+      "extendedRequestId": "H86X6jc9oAMEJcw=",
+      "httpMethod": "PUT",
+      "identity": {
+        "accessKey": null,
+        "accountId": null,
+        "caller": null,
+        "cognitoAmr": null,
+        "cognitoAuthenticationProvider": null,
+        "cognitoAuthenticationType": null,
+        "cognitoIdentityId": null,
+        "cognitoIdentityPoolId": null,
+        "principalOrgId": null,
+        "sourceIp": "116.87.87.214",
+        "user": null,
+        "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36",
+        "userArn": null
+      },
+      "path": "/default/storeUUID",
+      "protocol": "HTTP/1.1",
+      "requestId": "H86X6jc9oAMEJcw=",
+      "requestTime": "12/Jul/2023:13:01:38 +0000",
+      "requestTimeEpoch": 1689166898350,
+      "resourceId": "PUT /storeUUID",
+      "resourcePath": "/storeUUID",
+      "stage": "default"
+    },
+    "pathParameters": null,
+    "stageVariables": null,
+    "body": "{\"uuid\":\"4af495be-65e5-411a-9fb2-4c6d94012603\"}",
+    "isBase64Encoded": false
+  }
