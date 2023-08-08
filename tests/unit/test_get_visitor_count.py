@@ -3,9 +3,9 @@ import pytest
 import sys
 import os
 
-sys.path.insert(0, "/Users/lance/Downloads/resume_backend/lambdas")
+
 os.environ["TABLE_NAME"] = "mock_visitor_count"
-from get_visitor_count import app
+from resume_backend.lambdas.get_visitor_count import app
 
 @pytest.fixture
 

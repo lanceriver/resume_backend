@@ -5,9 +5,9 @@ import sys
 import os
 
 
-sys.path.insert(0, "/Users/lance/Downloads/resume_backend/lambdas")
+
 os.environ["TABLE_NAME"] = "mock_visitor_count"
-from update_visitor_count import app
+from resume_backend.lambdas.update_visitor_count import app
 
 @pytest.fixture
 def update_event(mock_visitor_count):

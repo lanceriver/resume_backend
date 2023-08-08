@@ -5,11 +5,11 @@ import random
 import sys
 import os
 
-sys.path.insert(0, "/Users/lance/Downloads/resume_backend/lambdas")
+
 
 os.environ["TABLE_NAME"] = "mock_uuid"
 
-from checkUUID import app
+from resume_backend.lambdas.checkUUID import app
 
 def init_list(mock_data):
     response = mock_data.scan()

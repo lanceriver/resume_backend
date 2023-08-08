@@ -4,11 +4,10 @@ import uuid
 import sys
 import os
 
-sys.path.insert(0, "/Users/lance/Downloads/resume_backend/lambdas")
 
 os.environ["TABLE_NAME"] = "mock_uuid"
 
-from storeUUID import app
+from resume_backend.lambdas.storeUUID import app
 
 def test_store_valid_uuid(sample_uuid_json, mock_data):
     result = json.loads(sample_uuid_json)
