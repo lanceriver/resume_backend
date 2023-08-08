@@ -57,4 +57,4 @@ jobs:
         sam build
     - name: Deploy SAM
       run: |
-        sam deploy --stack-name v1point2 --profile admin
+        sam deploy --stack-name v1point2 --profile default
