@@ -118,6 +118,15 @@ Outputs:
   # ServerlessRestApi is an implicit API created out of Events key under Serverless::Function
   # Find out more about other implicit resources you can reference within SAM
   # https://github.com/awslabs/serverless-application-model/blob/master/docs/internals/generated_resources.rst#api
-  HelloWorldApi:
-    Description: API Gateway endpoint URL for Prod stage for Hello World function
-    Value: !Sub "https://njp507r5m5.execute-api.us-east-1.amazonaws.com/default"
+  StoreUUIDApi:
+    Description: API Gateway endpoint URL for storeUUID function
+    Value: !Sub "https://${ServerlessHttpApi}.execute-api.${AWS::Region}.amazonaws.com/storeUUID"
+  GetUUIDApi:
+    Description: API Gateway endpoint URL for GetUUID function
+    Value: !Sub "https://${ServerlessHttpApi}.execute-api.${AWS::Region}.amazonaws.com/getUUID"
+  GetVisitorCountApi:
+    Description: API Gateway endpoint URL for GetVisitorCount function
+    Value: !Sub "https://${ServerlessHttpApi}.execute-api.${AWS::Region}.amazonaws.com/get_visitor_count"
+  UpdateVisitorCountApi:
+    Description: API Gateway endpoint URL for UpdateVisitorCount function
+    Value: !Sub "https://${ServerlessHttpApi}.execute-api.${AWS::Region}.amazonaws.com/update_visitor_count"

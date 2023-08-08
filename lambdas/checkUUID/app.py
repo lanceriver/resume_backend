@@ -1,8 +1,11 @@
 import json
 import boto3
+import os
 
+table_name = os.getenv("TABLE_NAME", "website_userIDs")
 dynamodb = boto3.resource('dynamodb')
-uuid_table = dynamodb.Table('website_userIDs')
+uuid_table = dynamodb.Table(table_name)
+
 
 def cookie_unique(uuid):
     response = uuid_table.scan()
@@ -14,8 +17,12 @@ def cookie_unique(uuid):
     return False
 
 def lambda_handler(event, context):
-    uuid_dict = json.loads(event['body'])
-    uuid = uuid_dict['uuid']
+    if (isinstance(event, dict) == True):
+        uuid_dict = json.loads(event['body'])
+        uuid = uuid_dict['uuid']
+    else:
+        uuid_dict = json.loads(event)
+        uuid = uuid_dict['body']['uuid']
     response = cookie_unique(uuid)
     return {
         'statusCode': 200,
