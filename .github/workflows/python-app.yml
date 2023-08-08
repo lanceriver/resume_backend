@@ -58,4 +58,4 @@ jobs:
         sam build
     - name: Deploy SAM
       run: |
-        sam deploy --stack-name v1point2
+        sam deploy --no-confirm-changeset --no-fail-on-empty-changeset --stack-name v1point2
