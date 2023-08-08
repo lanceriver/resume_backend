@@ -45,3 +45,22 @@ jobs:
       run: |
         ls
         python -m pytest
+
+  sam-validate-build-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Set Up SAM
+        uses: aws-actions/setup-sam@v2
+        with:
+          use-installer: true
+      - name: Validate SAM
+        run: |
+          sam validate
+      - name: Build SAM
+        run: |
+          sam build
+      - name: Deploy SAM
+        run: |
+          sam deploy --stack-name v1point2
+
