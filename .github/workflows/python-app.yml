@@ -51,6 +51,7 @@ jobs:
         use-installer: true
     - name: Validate SAM
       run: |
+        aws configure list
         sam validate
     - name: Build SAM
       run: |
