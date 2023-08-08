@@ -55,7 +55,7 @@ jobs:
     - name: Build SAM
       run: |
         sam build
-        aws list-profiles
+        aws configure list-profiles
     - name: Deploy SAM
       run: |
         sam deploy --stack-name v1point2
