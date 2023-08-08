@@ -1,1 +1,5 @@
 requests
+json
+boto3
+os
+uuid
