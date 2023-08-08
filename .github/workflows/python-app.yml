@@ -54,7 +54,7 @@ jobs:
         sam validate
     - name: Build SAM
       run: |
-        aws configure list-profiles
+        sam build
     - name: Deploy SAM
       run: |
-        sam deploy --stack-name v1point2
+        sam deploy --stack-name v1point2 --profile admin
