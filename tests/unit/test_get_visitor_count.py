@@ -6,11 +6,11 @@ import os
 
 os.environ["TABLE_NAME"] = "mock_visitor_count"
 from resume_backend.lambdas.get_visitor_count import app
-
+from resume_backend.events.get_json_folder import get_json_event
 @pytest.fixture
 
 def get_event(mock_visitor_count):
-    json_event = open("/Users/lance/Downloads/resume_backend/events/get_event.json", "r")
+    json_event = get_json_event.load_json_event()
     response = app.lambda_handler(json_event,"")
     response_body = json.loads(response['body'])
     viewer_count = int(response_body['Item']['viewer_count'])
