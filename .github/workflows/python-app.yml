@@ -38,7 +38,6 @@ jobs:
     - name: Configure AWS Credentials
       uses: aws-actions/configure-aws-credentials@v2
       with:
-          profile-name: admin
           aws-region: us-east-1
           role-to-assume: arn:aws:iam::319611139788:role/GitHubAction-AssumeRoleWithAction
           role-session-name: GitHub_to_AWS_via_FederatedOIDC
@@ -52,7 +51,6 @@ jobs:
         use-installer: true
     - name: Validate SAM
       run: |
-        export AWS_PROFILE=admin
         aws configure list
         sam validate
     - name: Build SAM
@@ -60,4 +58,4 @@ jobs:
         sam build
     - name: Deploy SAM
       run: |
-        sam deploy --stack-name v1point2 --profile GitHubAction-AssumeRoleWithAction
+        sam deploy --stack-name v1point2

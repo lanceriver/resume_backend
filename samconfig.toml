@@ -21,7 +21,6 @@ stack_name = "testingWebsiteStack"
 s3_prefix = "testingWebsiteStack"
 region = "us-east-1"
 image_repositories = []
-profile = "admin"
 disable_rollback = true
 
 [default.package.parameters]
