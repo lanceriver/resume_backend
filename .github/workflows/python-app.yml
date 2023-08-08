@@ -54,7 +54,6 @@ jobs:
         sam validate
     - name: Build SAM
       run: |
-        sam build
         aws configure list-profiles
     - name: Deploy SAM
       run: |
